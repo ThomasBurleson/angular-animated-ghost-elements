@@ -10,7 +10,7 @@ While many sites demostrate concepts of skeletons and CSS, the Angular community
 
 ####  StackBlitz Demo
 
-<a href="" target="_blank">
+<a href="https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html" target="_blank">
 ![image](https://user-images.githubusercontent.com/210413/49487496-407a8c00-f808-11e8-9a5c-19f3e89c4ecc.png)
 </a>
 
