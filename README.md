@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/210413/49486685-078ce800-f805-11e8-9b58-a01fa819a989.png)
 
-Sometimes referred to as ‘skeletons’, ghost elements are gray-box representations of UI that will be available once async data is loaded or perhaps a lazy-loaded module is ready. 
+Sometimes referred to as ‘skeletons’, ghost elements are gray-box representations of pending UI that will be available in the future... once async data is loaded or perhaps a lazy-loaded module is ready. 
 
 > Ghost elements are very useful for implementations of complex tables and other UX where data loads are not trivial.
 
