@@ -6,7 +6,7 @@ Sometimes referred to as ‘skeletons’, ghost elements are gray-box representa
 
 > Ghost elements are very useful for implementations of complex tables and other UX where data loads are not trivial.
 
-While many sites [most notably Slack and Facebook] incorporate UX with skeletons and CSS, the Angular developer community has discussed this technique in any detail. 
+While many applications [most notably Slack and Facebook] incorporate UX with skeletons and CSS, the Angular developer community has yet to discuss this technique in any detail. 
 
 This repository demonstrates an approach on how to partition, implement, and animate **ghost elements**... implemented with Angular 7.x and `@angular/animations`
 
