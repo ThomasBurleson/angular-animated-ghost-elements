@@ -1,0 +1,14 @@
+:host {
+  display: inline-block;
+  
+  svg {
+    display: inline-block;
+    all: inherit;
+
+    &.icon {
+      width: 47px;
+      height: 47px;
+      padding-top:3px;
+    }
+  }
+}

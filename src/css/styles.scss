@@ -1,0 +1,30 @@
+@import '../../node_modules/@angular/material/theming';
+
+/** 
+  Define a custom typography config that overrides the font-family as well as the
+ `headlines` and `body-1` levels.
+ */
+ 
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700)
+);
+
+
+@include angular-material-typography($custom-typography);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);
+
+
+$config: mat-typography-config();
+
+// Custom header that uses only the Material `font-size` and `font-family`.
+
+
+/* Add application styles & imports to this file! */ 
+body {
+  font-family: mat-font-family($config);
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,55 @@
+@import '../../utils/animations//ghost-animation.scss';
+@import '../user-list.component.scss';
+
+:host {
+  position: absolute;
+  display:block;  
+  overflow: hidden;
+
+  top:87px;  
+  width: 100%;
+
+  -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+}
+
+.ghost_item {
+  overflow: hidden;
+  margin-bottom: -6px;
+
+  .avatar {
+    background-color: #ddd; 
+    border: solid 2px rgb(212, 212, 212);
+    border-radius: 50%;  
+    @include animate-ghost-avatar;
+  }
+
+  .lines { 
+
+     margin-block-end: $ghost-row-gap; 
+     
+    h2, h3, p {
+      
+      background-color: #ccc;
+      border-bottom: 2px solid white;
+      border-radius: 4px 4px 4px 4px;
+      @include animate-ghost-line;
+    }
+
+    h2 {
+      width: 50%;
+    }
+
+    h3 {
+      width: 85%; 
+    }  
+
+    p {
+      width: 70%;
+    }
+  }
+
+  &:not(:first-child), &:not(:second-child) {
+    // margin-top: -5px;
+  }
+}
+
