@@ -19,5 +19,8 @@ This repository demonstrates an approach on how to partition, implement, and ani
 #### Learning Resources
 
 * https://www.viget.com/articles/a-bone-to-pick-with-skeleton-screens/
+* https://codepen.io/NickNoordijk/pen/VLvxLE
 * https://css-tricks.com/building-skeleton-screens-css-custom-properties/
+* https://blog.ionicframework.com/improved-perceived-performance-with-skeleton-screens/
+  * https://github.com/ionic-team/ionic/tree/master/core/src/components/skeleton-text
 * https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html
