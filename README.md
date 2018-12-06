@@ -19,6 +19,7 @@ The advantage of (2: Separate Overlays) is that developers have maximum power to
 
 This repository demonstrates ideas on how to partition, implement, and animate **ghost elements**... implemented with Angular 7.x and `@angular/animations`. 
 
+----
 
 ####  StackBlitz Demo
 
