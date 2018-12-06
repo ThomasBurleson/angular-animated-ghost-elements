@@ -8,10 +8,21 @@ Sometimes referred to as ‘skeletons’, ghost elements are gray-box representa
 
 While many applications [most notably Slack and Facebook] incorporate UX with skeletons and CSS, the Angular developer community has yet to discuss this technique in any detail. 
 
-This repository demonstrates an approach on how to partition, implement, and animate **ghost elements**... implemented with Angular 7.x and `@angular/animations`
+#### Approaches
+
+Ghost views can be used in two (2) ways:
+
+1. Inline-elements that either show ghosts or 'real' data
+2. Separate, distinct overlays that of DOM elements used in place of the 'real' elements (DOM)
+
+The advantage of (2: Separate Overlays) is that developers have maximum power to animated the ghost elements and the real elements simultaneously. Especially for lists, where developers may want to stagger items as the `:enter` or `:leave`.
+
+This repository demonstrates ideas on how to partition, implement, and animate **ghost elements**... implemented with Angular 7.x and `@angular/animations`. 
+
 
 ####  StackBlitz Demo
 
+(2) Separate-Overlays:
 
 [![image](https://user-images.githubusercontent.com/210413/49487496-407a8c00-f808-11e8-9a5c-19f3e89c4ecc.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html)
 
