@@ -23,13 +23,13 @@ This repository demonstrates ideas on how to partition, implement, and animate *
 
 ####  StackBlitz Demo
 
-(1) Inline-Elements
+1.) Inline-Elements
 
 ![image](https://user-images.githubusercontent.com/210413/49587652-1faa5780-f92a-11e8-81ff-8107aa418820.png)
 
 <br/>
 
-(2) [Separate-Overlays](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html):
+2.) [Separate-Overlays](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html):
 
 [![image](https://user-images.githubusercontent.com/210413/49587645-1ae5a380-f92a-11e8-9ead-787f337a8511.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html)
 
