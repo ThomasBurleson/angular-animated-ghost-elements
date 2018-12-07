@@ -1,6 +1,6 @@
 $avatar-gap: 25 + 50 + 20px;
 $row-gap: 15px;
-$ghost-row-gap: ($row-gap - 3) px;
+
 $min-content-height: 459px;
 
 :host {
@@ -11,6 +11,8 @@ $min-content-height: 459px;
 
 .content {
   min-height: $min-content-height;
+  overflow:hidden;
+  max-height: calc(100vh - 51px);
 }
 
 .spinner {
@@ -72,6 +74,7 @@ $min-content-height: 459px;
     .company {
       color: rgb(148, 148, 148);
     }
+    margin-bottom: 25px;  
   }
 }
 

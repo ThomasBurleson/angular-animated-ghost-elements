@@ -9,8 +9,8 @@ import { CustomMaterialModule } from './custom-material.module';
 import { AppComponent } from './app-shell/app.component';
 import { SvgIconComponent } from './utils/svg-icon/svg-icon.component';
 
+import { UsersService } from './users';
 import { UserListComponent } from './user-list/user-list.component';
-import { GhostListComponent } from './user-list/ghost/ghost-list.component';
 
 @NgModule({
   imports: [
@@ -23,9 +23,9 @@ import { GhostListComponent } from './user-list/ghost/ghost-list.component';
   declarations: [
     AppComponent, 
     UserListComponent, 
-    GhostListComponent, 
     SvgIconComponent
   ],
+  providers: [ UsersService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
