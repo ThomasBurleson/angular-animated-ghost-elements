@@ -11,8 +11,6 @@ $min-content-height: 459px;
 
 .content {
   min-height: $min-content-height;
-  overflow:hidden;
-  max-height: calc(100vh - 51px);
 }
 
 .spinner {
@@ -27,6 +25,10 @@ $min-content-height: 459px;
 
 .user {
   overflow: hidden;
+
+  &.refreshing {
+    opacity: 0.2;
+  }
 }
 
 .avatar {

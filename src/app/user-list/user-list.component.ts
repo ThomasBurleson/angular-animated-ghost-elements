@@ -6,15 +6,14 @@ import { Observable, of} from 'rxjs';
 import { delay, map, tap, startWith } from 'rxjs/operators';
 
 import { fadeIn, fadeOut } from '../utils/animations/fade-animations';
-import { UsersService } from '../users';
-
+import { UsersService, User, AsyncItem, makeAsyncItem } from '../users';
 
 @Component({
   selector: 'user-list',
   templateUrl: 'user-list.component.html', 
   animations: [
     trigger('fadeOut', fadeOut()),
-    trigger('fadeIn', fadeIn(':enter')) 
+    trigger('fadeIn', fadeIn()) 
   ],
   styleUrls: [
     './user-list.component.scss',
@@ -22,14 +21,17 @@ import { UsersService } from '../users';
   ],
 })
 export class UserListComponent {
-  useSpinner = false;
-  users$ = this.service.loadUsers();
+  users$ = this.service.loadUsers(); 
 
   constructor(private service: UsersService) { }
 
-  reloadList(useSpinner = false){
-    this.useSpinner = useSpinner;
-    this.users$ = this.service.loadUsers()
+  /**
+   * Use 'uid' if not a ghost... otherwise just create a number...
+   */ 
+  trackByFn(index:number, user: AsyncItem<User>) {
+    return user.data ? user.data.id : 0; 
   }
-  
+
 }
+
+

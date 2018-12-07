@@ -1,2 +1,3 @@
+export * from './model/user';
 export * from './users.service';
-export * from './user';
+export * from './model/async-item';

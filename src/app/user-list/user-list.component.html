@@ -7,28 +7,28 @@
 <div class="content"> 
 
   <div *ngIf='users$ | async as users' [@fadeIn]="users.length"  fxLayout="row wrap" class="list">
-    <div *ngFor='let user of users' 
-         [class.ghost_item]="!user" [class.user]="user" fxFlex="50" fxFlex.xs="100">
-          <div class="avatar">
-            <svg-icon [icon]="user?.avatar"></svg-icon>  
+    <div *ngFor='let user of users; trackBy: trackByFn'
+         [class.ghost_item]="user.isLoading" 
+         [class.user]="!user.isLoading" 
+         fxFlex="50" fxFlex.xs="100">
+          <div class="avatar" (click)="service.refreshUser(user)">
+            <svg-icon [icon]="user.data?.avatar"></svg-icon>  
           </div>
           <div class="lines">
-            <h2>{{user?.name}}</h2>
-            <h3>{{user?.email}}</h3>
-            <p><span class="company" *ngIf="user">Company:</span> {{user?.company.name}}</p> 
+            <h2>{{user.data?.name}}</h2>
+            <h3>{{user.data?.email}}</h3>
+            <p><span class="company" *ngIf="user.data">Company:</span> {{user.data?.company.name}}</p> 
           </div>
     </div> 
   </div>
 
-  <mat-spinner class="spinner" *ngIf="useSpinner"></mat-spinner>
-  
 </div>
 
 <div class="footer">
-  <div fxLayout fxLayoutAlign="center center" fxLayoutGap="25px" *ngIf="!users?.length">
-    <p>Test loading using spinners and ghosts:</p>
-    <button mat-flat-button color="warn" (click)="reloadList(true)">Reload</button>
-    <button mat-flat-button color="primary" (click)="reloadList()">Reload w/ Ghosts</button>
+  <div fxLayout fxLayoutAlign="left center" fxLayoutGap="25px" style="padding-left:35px;">
+    <button mat-flat-button color="primary" (click)="service.loadUsers()">Reload All</button>
+    <p>... or click on an Avatar [above] to refresh a specific user.</p>
+
   </div>
 </div>
 

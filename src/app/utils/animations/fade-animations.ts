@@ -8,7 +8,7 @@ import {
 } from '@angular/animations';
 
 
-export function fadeIn(selector: string, duration = '400ms ease-out') {
+export function fadeIn(selector = ':enter', duration = '400ms ease-out') {
   return [
     transition('* => *', [      
       query(selector, [

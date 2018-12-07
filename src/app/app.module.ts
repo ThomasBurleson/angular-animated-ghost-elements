@@ -9,7 +9,7 @@ import { CustomMaterialModule } from './custom-material.module';
 import { AppComponent } from './app-shell/app.component';
 import { SvgIconComponent } from './utils/svg-icon/svg-icon.component';
 
-import { UsersService } from './users';
+import { UsersService } from './users/users.service';
 import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
