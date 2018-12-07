@@ -23,12 +23,15 @@ $min-content-height: 459px;
   padding-top: 24px;
 }
 
+
 .user {
   overflow: hidden;
+  opacity: 1.0;  
+}
 
-  &.refreshing {
-    opacity: 0.2;
-  }
+.polling {
+  opacity: 0.2;
+  filter: blur(2px);
 }
 
 .avatar {
@@ -98,4 +101,66 @@ $min-content-height: 459px;
   bottom: 0px;
   margin-right: auto;
   margin-left: auto;
+}
+
+
+//variables
+$bg-color: rgb(202, 227, 255); //container background-color;
+$basic-dark-color: #159249; //color of the spinner
+$border-width: 2px; //width of spinners border
+$basic-spinner-dimensions: 50px; //width and height of spinner
+$main-spinner-dimensions: $basic-spinner-dimensions - $border-width * 2; //width and height of bigger circle
+$small-spinner-dimensions: $main-spinner-dimensions * 0.7; //width and height of smaller circle
+
+
+/* spinner style */
+.spinner {  
+    position: relative;
+    width: $basic-spinner-dimensions;
+    height: $basic-spinner-dimensions;
+    margin-left: -22px;
+    margin-top: -2px;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-width: 4px;
+      border-style: solid;
+      border-radius: 50%;
+    }
+  }
+
+.spinner.spinner-2 {
+  
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+      border-style: solid;
+    }
+    
+    100% {
+      transform: scale(0);
+      border-style: dashed;
+    }
+  }
+  
+  &:before {
+    width: $main-spinner-dimensions;
+    height: $main-spinner-dimensions;
+    border-color: $basic-dark-color;
+    top: 0px;
+    left: 0px;
+    animation: scale 1s linear 0s infinite alternate;
+  }
+  
+  &:after {
+    width: $main-spinner-dimensions;
+    height: $main-spinner-dimensions;
+    border-color: $basic-dark-color;
+    top: 0;
+    left: 0;
+    animation: scale 1s linear 0s infinite alternate-reverse;
+  }
 }

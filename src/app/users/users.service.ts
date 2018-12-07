@@ -6,7 +6,7 @@ import { delay, map, withLatestFrom, filter } from 'rxjs/operators';
 
 import { AVATARS } from '../utils/svg-icon/svg-icon.component';
 
-import { AsyncItem, makeAsyncItem } from './model/async-item';
+import { AsyncItem, makeAsyncItem, AsyncItemState } from './model/async-item';
 import { User } from './model/user';
 
 const URL_MOCK_USERS = 'https://jsonplaceholder.typicode.com/users';
@@ -37,32 +37,36 @@ export class UsersService {
   refreshUser(item:AsyncItem<User>) {
       if ( !item.data ) return;
 
-      const uid = item.data.email;   // save reference to uid
+      const user = { ... item.data };
+      const findUserInList = (list:User[]) => {
+        const found = list.reduce((found, it) => {
+          return found || ((it.email == user.email) ? it : null);
+        }, null);
+        return found;
+      };
+      const updateUserInList = (updated, items) => {
+        return items.map(it => {
+          if ( it.data && (it.data.email == user.email)) {
+            it = makeAsyncItem(updated, AsyncItemState.LOADED);
+            console.log(JSON.stringify(it));
+          }
+          return it;
+        })
+      }
 
-      item.isLoading = true;
-      item.uid       = uid;
-      item.data      = null;             // clear current data
-     
       this.http.get(URL_MOCK_USERS).pipe(
         delay(RESPONSE_DELAY),    
         map(injectAvatars ),          // add cartoon avatars     
-        map((list:User[]) => {
-          const found = list.reduce((found, it) => {
-            return found || ((it.email == uid) ? it : null);
-          }, null);
-          return found;
-        }),
+        map(findUserInList),
         withLatestFrom(this.users$)      
-      ).subscribe(([user, items]) => {
-        
-        this.announcer.next(items.map(it => {
-          return (it.uid == user.email) ? {
-            ...it,
-            isLoading: false,
-            data: user
-          } : it;
-        }));
+      ).subscribe(([updated, items]) => {        
+        this.announcer.next(updateUserInList(updated, items));
       })
+      
+      // Set item state to 'polling'
+      item.state = AsyncItemState.POLLING;
+      console.log(JSON.stringify(item));
+
   }
 
   // ***************************************************************
@@ -113,7 +117,7 @@ function injectAvatars(users) {
  * Wrap `user` values for async presentation with ghosts
  */
 function wrapAsAsyncItems(list) {
-  return list.map((it:User) => makeAsyncItem<User>(it)); 
+  return list.map((user:User) => makeAsyncItem<User>(user, AsyncItemState.LOADING)); 
 }
 
 /**
@@ -122,12 +126,8 @@ function wrapAsAsyncItems(list) {
 function simulatePartialLoads(list) {
   return list.map((it, i) =>{
      const hasData = !!it.data;
-     const user = (hasData && ((i+1) % 3)) ? it.data : null; 
+     const state = (hasData && ((i+1) % 3)) ?  AsyncItemState.LOADED : AsyncItemState.LOADING; 
       
-     return {
-       ...it,
-       isLoading: !user,
-       data: user
-     };
+     return makeAsyncItem(state == AsyncItemState.LOADING ? null : it.data, state);
   }); 
 }

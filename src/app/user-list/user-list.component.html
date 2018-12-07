@@ -8,17 +8,20 @@
 
   <div *ngIf='users$ | async as users' [@fadeIn]="users.length"  fxLayout="row wrap" class="list">
     <div *ngFor='let user of users; trackBy: trackByFn'
-         [class.ghost_item]="user.isLoading" 
-         [class.user]="!user.isLoading" 
+         [class.ghost_item]="state(user).isLoading()"  
+         [class.user]="state(user).isLoaded()"                 
          fxFlex="50" fxFlex.xs="100">
-          <div class="avatar" (click)="service.refreshUser(user)">
-            <svg-icon [icon]="user.data?.avatar"></svg-icon>  
-          </div>
-          <div class="lines">
-            <h2>{{user.data?.name}}</h2>
-            <h3>{{user.data?.email}}</h3>
-            <p><span class="company" *ngIf="user.data">Company:</span> {{user.data?.company.name}}</p> 
-          </div>
+            <div class="avatar" (click)="service.refreshUser(user)">
+              <svg-icon [icon]="user.data?.avatar" *ngIf="!state(user).isPolling()"></svg-icon> 
+              <div class="spinner-block" *ngIf="state(user).isPolling()">
+                <div class="spinner spinner-2"></div>
+              </div>
+            </div>
+            <div class="lines" [class.polling]="state(user).isPolling()" >
+              <h2>{{user.data?.name}}</h2>
+              <h3>{{user.data?.email}}</h3>
+              <p><span class="company" *ngIf="user.data">Company:</span> {{user.data?.company.name}}</p> 
+            </div>
     </div> 
   </div>
 
@@ -27,8 +30,8 @@
 <div class="footer">
   <div fxLayout fxLayoutAlign="left center" fxLayoutGap="25px" style="padding-left:35px;">
     <button mat-flat-button color="primary" (click)="service.loadUsers()">Reload All</button>
-    <p>... or click on an Avatar [above] to refresh a specific user.</p>
-
+    <p>... or click on an Avatar [above] to refresh a specific user.</p>    
+    
   </div>
 </div>
 
