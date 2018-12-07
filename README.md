@@ -25,9 +25,9 @@ This repository demonstrates ideas on how to partition, implement, and animate *
 
 ####  StackBlitz Demo
 
-1.) Inline-Elements (Pending)
+1.) [Inline-Elements](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-demo)
 
-![image](https://user-images.githubusercontent.com/210413/49587652-1faa5780-f92a-11e8-81ff-8107aa418820.png)
+[![image](https://user-images.githubusercontent.com/210413/49587652-1faa5780-f92a-11e8-81ff-8107aa418820.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-demo)
 
 <br/>
 
