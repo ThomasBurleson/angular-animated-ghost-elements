@@ -1,4 +1,4 @@
-@import '../../node_modules/@angular/material/theming';
+@import '@angular/material/theming';
 
 /** 
   Define a custom typography config that overrides the font-family as well as the
@@ -27,4 +27,39 @@ body {
   font-family: mat-font-family($config);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+
+  my-app {
+    min-height: 100vh;
+  }
+
+}
+
+
+@media(max-height:450px) {
+    user-list {
+      transform: translate(-25%, -25%) scale(0.5);
+        min-height: 100vh;
+    }
+}
+
+@media(min-height:451px) and (max-height:610px) {
+    user-list {
+      transform: translate(-20%, -20%) scale(0.6);
+      min-height: 100vh;
+    }
+}
+
+@media(min-height:611px) and (max-height:700px) {
+    user-list {
+      transform: translate(-10%, -10%) scale(0.80);
+      min-height: 100vh;
+    }
+}
+
+@media(min-height:701px) {
+    user-list {
+      transform: translate(0%, 0%) scale(1.0);
+      min-height: 100vh;
+    }
 }

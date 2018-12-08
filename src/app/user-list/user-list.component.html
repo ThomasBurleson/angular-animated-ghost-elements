@@ -8,7 +8,7 @@
 
   <div *ngIf='users$ | async as users' [@fadeIn]="users.length"  fxLayout="row wrap" class="list">
     <div *ngFor='let user of users; trackBy: trackByFn'
-         [class.ghost_item]="state(user).isLoading()"  
+         [class.ghost]="state(user).isLoading()"  
          [class.user]="state(user).isLoaded()"                 
          fxFlex="50" fxFlex.xs="100">
             <div class="avatar" (click)="service.refreshUser(user)">
@@ -27,8 +27,12 @@
 
 </div>
 
-<div class="footer">
-  <div fxLayout fxLayoutAlign="left center" fxLayoutGap="25px" style="padding-left:35px;">
+<div class="footer" style="padding-left:35px; padding-right:35px;">
+  <p>
+    The list above contains 'asyncItems' rendered with ghost elements while loading. <br/>
+    Some of the items have not been loaded to show how partially list loads are supported.
+  </p>
+  <div fxLayout fxLayoutAlign="left center" fxLayoutGap="25px" style="margin-top:-15px;">
     <button mat-flat-button color="primary" (click)="service.loadUsers()">Reload All</button>
     <p>... or click on an Avatar [above] to refresh a specific user.</p>    
     

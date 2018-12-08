@@ -1,3 +1,4 @@
+import { AsyncItem } from './async-item';
 
 export interface User {
   id     : string;
@@ -9,3 +10,5 @@ export interface User {
     name : string;
   }
 }
+
+export type AsyncUserList = AsyncItem<User>[];

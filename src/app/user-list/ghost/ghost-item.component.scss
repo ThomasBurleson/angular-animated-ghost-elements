@@ -2,7 +2,7 @@
 
 $ghost-row-gap: (15 - 3) px;
 
-.ghost_item {
+.ghost {
   overflow: hidden;
   margin-bottom: -6px;
 
@@ -10,7 +10,10 @@ $ghost-row-gap: (15 - 3) px;
     background-color: rgba(221, 221, 221, 0.514); 
     border: solid 2px rgba(212, 212, 212, 0.616);
     border-radius: 50%;  
-    @include animate-ghost-avatar;
+    //@include animate-ghost-avatar;
+    background: url(assets/silohuette.svg);
+    background-size: 50px 50px; 
+    cursor: auto;
   }
 
   .lines { 

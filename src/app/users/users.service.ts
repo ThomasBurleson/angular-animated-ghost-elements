@@ -7,12 +7,11 @@ import { delay, map, withLatestFrom, filter } from 'rxjs/operators';
 import { AVATARS } from '../utils/svg-icon/svg-icon.component';
 
 import { AsyncItem, makeAsyncItem, AsyncItemState } from './model/async-item';
-import { User } from './model/user';
+import { User, AsyncUserList } from './model/user';
 
-const URL_MOCK_USERS = 'https://jsonplaceholder.typicode.com/users';
+const URL_MOCK_USERS = 'assets/users.json';
 const RESPONSE_DELAY = 1750;
 
-export type AsyncUserList = AsyncItem<User>[];
 
 @Injectable()
 export class UsersService {
@@ -48,7 +47,6 @@ export class UsersService {
         return items.map(it => {
           if ( it.data && (it.data.email == user.email)) {
             it = makeAsyncItem(updated, AsyncItemState.LOADED);
-            console.log(JSON.stringify(it));
           }
           return it;
         })
@@ -65,8 +63,6 @@ export class UsersService {
       
       // Set item state to 'polling'
       item.state = AsyncItemState.POLLING;
-      console.log(JSON.stringify(item));
-
   }
 
   // ***************************************************************

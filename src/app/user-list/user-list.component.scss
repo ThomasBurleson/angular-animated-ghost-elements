@@ -30,8 +30,8 @@ $min-content-height: 459px;
 }
 
 .polling {
-  opacity: 0.2;
-  filter: blur(2px);
+    opacity: 0.2;
+    filter: blur(2px);
 }
 
 .avatar {
@@ -44,6 +44,7 @@ $min-content-height: 459px;
   margin-left: 27px;
 
   overflow: hidden;
+  cursor: pointer;
 }
 
 .lines {
@@ -97,10 +98,12 @@ $min-content-height: 459px;
   border-top: 1px solid #ddd;
   padding-top: 10px;
   padding-bottom: 5px;
-  position: fixed;
+  display: block;
   bottom: 0px;
   margin-right: auto;
   margin-left: auto;
+    padding: 10px;
+  background-color: white;
 }
 
 
