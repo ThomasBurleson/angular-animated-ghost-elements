@@ -25,7 +25,7 @@ export class UserListComponent {
   state = queryState;                   // access to determine async state
   users$ = this.service.loadUsers();    // users enclosed in AsyncItem wrappers
 
-  constructor(private service: UsersService) { }
+  constructor(public service: UsersService) { }
 
   /**
    * Use 'uid' if not a ghost... otherwise just create a number...

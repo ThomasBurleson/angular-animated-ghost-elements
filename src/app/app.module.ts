@@ -11,6 +11,8 @@ import { SvgIconComponent } from './utils/svg-icon/svg-icon.component';
 
 import { UsersService } from './users/users.service';
 import { UserListComponent } from './user-list/user-list.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -18,7 +20,8 @@ import { UserListComponent } from './user-list/user-list.component';
     BrowserAnimationsModule,
     HttpClientModule,
     CustomMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent, 

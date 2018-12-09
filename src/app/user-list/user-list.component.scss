@@ -50,7 +50,7 @@ $min-content-height: 459px;
 .lines {
   margin-left: $avatar-gap;
   margin-block-end: $row-gap;
-  width: calc(100% - $avatar-gap);
+  width: calc(100% - 95px);
 
 
   h2, h3, p {
