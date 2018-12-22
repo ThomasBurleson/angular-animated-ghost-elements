@@ -23,21 +23,33 @@ This repository demonstrates ideas on how to partition, implement, and animate *
 
 ----
 
+### Blog on Medium.com
+
+[![image](https://user-images.githubusercontent.com/210413/50376033-838c7b80-05cc-11e9-8726-4ad74fff7c4c.png)](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba)
+
+----
+
 ####  StackBlitz Demo
 
-1.) [Inline-Elements](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-demo)
+1.) [Animated Ghosts Overlay](https://stackblitz.com/edit/angular-animated-ghost-elements-demo)
+ 
+[![image](https://user-images.githubusercontent.com/210413/49587645-1ae5a380-f92a-11e8-9ead-787f337a8511.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html)
+
+<br/>
+
+2.) [Animated Inline Ghosts](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-demo)
 
 [![image](https://user-images.githubusercontent.com/210413/49587652-1faa5780-f92a-11e8-81ff-8107aa418820.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-demo)
 
 <br/>
 
-2.) [Separate-Overlays Demo](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html)
 
-[![image](https://user-images.githubusercontent.com/210413/49587645-1ae5a380-f92a-11e8-9ead-787f337a8511.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.html)
+3.) [Animated Ghosts + AsyncItem](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-async-demo?file=src%2Fapp%2Fuser-list%2Fuser-list.component.ts)
+
+[![image](https://user-images.githubusercontent.com/210413/50376051-fe559680-05cc-11e9-980d-8e386ffc487d.png)](https://stackblitz.com/edit/angular-animated-ghost-elements-inline-async-demo)
 
 
-
-
+----
 
 #### Learning Resources
 
