@@ -18,14 +18,15 @@ While many applications [most notably Slack and Facebook] incorporate UX with sk
 
 #### Approaches
 
-Ghost views can be used in two (2) ways:
+Ghost views can be used in three (3) ways:
 
-1. Inline-elements that either show ghosts or 'real' data
-2. Separate, distinct overlays that of DOM elements used in place of the 'real' elements (DOM)
+1. Separate, distinct overlays that of DOM elements used in place of the 'real' elements (DOM)
+2. Inline-elements that either show ghosts or 'real' data
+3. Inline Ghosts with AsyncItem wrappers
 
 For lists or tables, ghost elements can be especially challenging to implement.
 
-The advantage of (2) is that developers have maximum power to animated the ghost elements and the real elements simultaneously. Especially for lists, where developers may want to stagger items as the `:enter` or `:leave`.
+The advantage of (1) is that developers have maximum power to animated the ghost elements and the real elements simultaneously. Especially for lists, where developers may want to stagger items as the `:enter` or `:leave`.
 
 This repository demonstrates ideas on how to partition, implement, and animate **ghost elements**... implemented with Angular 7.x and `@angular/animations`. 
 
