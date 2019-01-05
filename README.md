@@ -14,6 +14,10 @@ While many applications [most notably Slack and Facebook] incorporate UX with sk
 
 [![image](https://user-images.githubusercontent.com/210413/50376033-838c7b80-05cc-11e9-8726-4ad74fff7c4c.png)](https://blog.angularindepth.com/https-medium-com-thomasburleson-animated-ghosts-bfc045a51fba)
 
+#### Hosted Demo
+
+https://angular-animated-ghost-list.firebaseapp.com/
+
 ----
 
 #### Approaches
